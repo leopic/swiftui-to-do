@@ -15,30 +15,26 @@ class SwiftUIToDoUITests: XCTestCase {
     app.launch()
 
     var buttons = app.buttons
-    XCTAssertTrue(buttons["btnToggle"].exists)
     XCTAssertTrue(buttons["Edit"].exists)
-    XCTAssertTrue(buttons["Add Item"].exists)
-    XCTAssertTrue(buttons["Item Status"].exists)
+    XCTAssertTrue(buttons["Add New"].exists)
 
     buttons["Edit"].tap()
 
     XCTAssertTrue(buttons["Done"].exists)
-    XCTAssertTrue(buttons["Delete"].exists)
-    XCTAssertTrue(buttons["Reorder"].exists)
+
+    XCTAssertTrue(findButtonBy(label: "Delete ").exists)
+    XCTAssertTrue(findButtonBy(label: "Reorder").exists)
+
+    buttons["Done"].tap()
 
     buttons = app.buttons
 
     XCTAssertFalse(buttons["Done"].exists)
-    XCTAssertFalse(buttons["Delete"].exists)
-    XCTAssertFalse(buttons["Reorder"].exists)
+    XCTAssertFalse(findButtonBy(label: "Delete ").exists)
+    XCTAssertFalse(findButtonBy(label: "Reorder").exists)
   }
 
-  func testLaunchPerformance() throws {
-    if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
-      // This measures how long it takes to launch your application.
-      measure(metrics: [XCTOSSignpostMetric.applicationLaunch]) {
-        XCUIApplication().launch()
-      }
-    }
+  private func findButtonBy(label: String) -> XCUIElement {
+    app.buttons.element(matching: NSPredicate(format: "label = '\(label)'"))
   }
 }

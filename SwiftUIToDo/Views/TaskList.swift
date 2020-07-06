@@ -41,8 +41,8 @@ struct TaskList: View {
 
         Section(footer: footer) {
           ForEach(tasks) { TaskRow(task: $0) }
-          .onDelete { self.store.remove($0) }
-          .onMove { self.store.move(from: $0, to: $1) }
+          .onDelete(perform: self.store.remove)
+          .onMove(perform: self.store.move)
         }
       }
       .navigationBarTitle("Tasks")

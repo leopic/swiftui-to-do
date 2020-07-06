@@ -1,12 +1,17 @@
 import Foundation
 import Combine
+import SwiftUI
 
 final class TaskStore: ObservableObject {
   @Published var tasks = [Task]()
 
   private var subscriptions = Set<AnyCancellable>()
+  private var userDefaults: UserDefaults
+  private let key = "Tasks"
 
-  init() {
+  init(userDefaults: UserDefaults = UserDefaults.standard) {
+    self.userDefaults = userDefaults
+
     load()
 
     $tasks
@@ -36,16 +41,26 @@ final class TaskStore: ObservableObject {
     tasks[index] = task
   }
 
-  func remove(_ at: IndexSet) -> Void {
+  func remove(at: IndexSet) -> Void {
     tasks.remove(atOffsets: at)
   }
 
-  func move(from source: IndexSet, to destination: Int) {
+  func remove(_ task: Task) -> Void {
+    guard let index = tasks.firstIndex(where: { $0.id == task.id }) else {
+      return
+    }
+
+    remove(at: IndexSet(arrayLiteral: index))
+  }
+
+  func move(from source: IndexSet, to destination: Int) -> Void {
+    print("before source: \(source) to destination: \(destination), tasks:", tasks.map { $0.title })
     tasks.move(fromOffsets: source, toOffset: destination)
+    print("after source: \(source) to destination: \(destination), tasks:", tasks.map { $0.title })
   }
 
   private func load() {
-    guard let data = UserDefaults.standard.value(forKey: "tasks") as? Data,
+    guard let data = userDefaults.value(forKey: key) as? Data,
       let tasks = try? PropertyListDecoder().decode([Task].self, from: data) else { return }
 
     self.tasks = tasks
@@ -54,7 +69,7 @@ final class TaskStore: ObservableObject {
   private func store(tasks: [Task]) {
     do {
       let codedArray = try PropertyListEncoder().encode(tasks)
-      UserDefaults.standard.set(codedArray, forKey: "tasks")
+      userDefaults.set(codedArray, forKey: key)
     } catch {
       print("Error saving tasks", error)
     }

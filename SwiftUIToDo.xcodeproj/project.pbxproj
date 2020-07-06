@@ -13,11 +13,12 @@
 		B339B0392478897400F6BB8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B339B0382478897400F6BB8E /* Assets.xcassets */; };
 		B339B03C2478897400F6BB8E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B339B03B2478897400F6BB8E /* Preview Assets.xcassets */; };
 		B339B03F2478897400F6BB8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B339B03D2478897400F6BB8E /* LaunchScreen.storyboard */; };
-		B339B04A2478897400F6BB8E /* SwiftUIToDoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B339B0492478897400F6BB8E /* SwiftUIToDoTests.swift */; };
 		B339B0552478897400F6BB8E /* SwiftUIToDoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B339B0542478897400F6BB8E /* SwiftUIToDoUITests.swift */; };
 		B339B06B2478B7A700F6BB8E /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = B339B06A2478B7A700F6BB8E /* Task.swift */; };
 		B339B06C2478B7A700F6BB8E /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = B339B06A2478B7A700F6BB8E /* Task.swift */; };
 		B354CDE8247B4514007B2765 /* TaskRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B354CDE7247B4514007B2765 /* TaskRow.swift */; };
+		B384ABC924B2988D0020307E /* TaskStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B384ABC824B2988D0020307E /* TaskStoreTests.swift */; };
+		B384ABCA24B298B50020307E /* TaskStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B339B0622478B73000F6BB8E /* TaskStore.swift */; };
 		B3C6C4A8248478F80017911F /* AddTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C6C4A7248478F80017911F /* AddTask.swift */; };
 		B3C6C4AA2484808E0017911F /* TaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C6C4A92484808E0017911F /* TaskList.swift */; };
 		B3D2D6FF248B696600E7D41B /* TaskFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D2D6FE248B696600E7D41B /* TaskFilter.swift */; };
@@ -49,7 +50,6 @@
 		B339B03E2478897400F6BB8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B339B0402478897400F6BB8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B339B0452478897400F6BB8E /* SwiftUIToDoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUIToDoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B339B0492478897400F6BB8E /* SwiftUIToDoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIToDoTests.swift; sourceTree = "<group>"; };
 		B339B04B2478897400F6BB8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B339B0502478897400F6BB8E /* SwiftUIToDoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUIToDoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B339B0542478897400F6BB8E /* SwiftUIToDoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIToDoUITests.swift; sourceTree = "<group>"; };
@@ -57,6 +57,7 @@
 		B339B0622478B73000F6BB8E /* TaskStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStore.swift; sourceTree = "<group>"; };
 		B339B06A2478B7A700F6BB8E /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		B354CDE7247B4514007B2765 /* TaskRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRow.swift; sourceTree = "<group>"; };
+		B384ABC824B2988D0020307E /* TaskStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStoreTests.swift; sourceTree = "<group>"; };
 		B3C6C4A7248478F80017911F /* AddTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTask.swift; sourceTree = "<group>"; };
 		B3C6C4A92484808E0017911F /* TaskList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskList.swift; sourceTree = "<group>"; };
 		B3D2D6FE248B696600E7D41B /* TaskFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskFilter.swift; sourceTree = "<group>"; };
@@ -136,8 +137,8 @@
 		B339B0482478897400F6BB8E /* SwiftUIToDoTests */ = {
 			isa = PBXGroup;
 			children = (
-				B339B0492478897400F6BB8E /* SwiftUIToDoTests.swift */,
 				B339B04B2478897400F6BB8E /* Info.plist */,
+				B384ABC824B2988D0020307E /* TaskStoreTests.swift */,
 			);
 			path = SwiftUIToDoTests;
 			sourceTree = "<group>";
@@ -242,7 +243,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1140;
-				LastUpgradeCheck = 1140;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Leo Picado";
 				TargetAttributes = {
 					B339B02E2478897200F6BB8E = {
@@ -325,7 +326,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B339B04A2478897400F6BB8E /* SwiftUIToDoTests.swift in Sources */,
+				B384ABC924B2988D0020307E /* TaskStoreTests.swift in Sources */,
+				B384ABCA24B298B50020307E /* TaskStore.swift in Sources */,
 				B339B06C2478B7A700F6BB8E /* Task.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,6 +393,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -451,6 +454,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

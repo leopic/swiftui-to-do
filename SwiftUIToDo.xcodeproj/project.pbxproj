@@ -57,6 +57,7 @@
 		B339B0622478B73000F6BB8E /* TaskStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStore.swift; sourceTree = "<group>"; };
 		B339B06A2478B7A700F6BB8E /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		B354CDE7247B4514007B2765 /* TaskRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRow.swift; sourceTree = "<group>"; };
+		B384ABC624B27FDF0020307E /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		B384ABC824B2988D0020307E /* TaskStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStoreTests.swift; sourceTree = "<group>"; };
 		B3C6C4A7248478F80017911F /* AddTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTask.swift; sourceTree = "<group>"; };
 		B3C6C4A92484808E0017911F /* TaskList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskList.swift; sourceTree = "<group>"; };
@@ -92,6 +93,7 @@
 		B339B0262478897200F6BB8E = {
 			isa = PBXGroup;
 			children = (
+				B384ABC724B27FE40020307E /* Playground */,
 				B339B0302478897200F6BB8E /* Products */,
 				B339B0312478897200F6BB8E /* SwiftUIToDo */,
 				B339B0482478897400F6BB8E /* SwiftUIToDoTests */,
@@ -177,6 +179,14 @@
 				B354CDE7247B4514007B2765 /* TaskRow.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		B384ABC724B27FE40020307E /* Playground */ = {
+			isa = PBXGroup;
+			children = (
+				B384ABC624B27FDF0020307E /* MyPlayground.playground */,
+			);
+			path = Playground;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
